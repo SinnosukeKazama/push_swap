@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 #include <stdarg.h> //va_arg..
 #include <stdbool.h>
 #include <stdint.h>
@@ -35,3 +37,5 @@ int				ft_put_ptr(void *ptr);
 unsigned int	ft_abs(const int n);
 int				count_digit(const int n, const unsigned int base);
 int				count_digit_unsigned(unsigned int un, const unsigned int base);
+
+#endif//FT_PRINTF_H
