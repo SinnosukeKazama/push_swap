@@ -11,14 +11,6 @@ bool	is_error_stdinput(int ac, char **av)
 		return (false);
 }
 
-void	rotate(t_dllist **node_begin)
-{
-	*node_begin = (*node_begin)->next;
-}
-void	rotate_rev(t_dllist **node_begin)
-{
-	*node_begin = (*node_begin)->prev;
-}
 void	print_dllist(t_dllist *node_begin, size_t num_node)
 {
 	t_dllist	*p;

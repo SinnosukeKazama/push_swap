@@ -44,3 +44,11 @@ void	free_dllist(t_dllist **node_begin, size_t num_node)
 	}
 }
 
+void	rotate(t_dllist **node_begin)
+{
+	*node_begin = (*node_begin)->next;
+}
+void	rotate_rev(t_dllist **node_begin)
+{
+	*node_begin = (*node_begin)->prev;
+}
