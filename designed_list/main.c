@@ -18,22 +18,28 @@ bool	is_error_stdinput(int ac, char **av)
 int main(int ac, char **av)
 {
 	size_t	num_elements;
-	t_stack *stk;
+	t_stack *stk_a;
+	t_stack *stk_b;
 
 	//Error
 	if (is_error_stdinput(ac, av))
 		return (ft_printf("Error.\n"), 1);
 	//allocate stack, 
 	num_elements = ac - 1;
-	stk = gen_stack(num_elements, &av[1]);
-	if (!stk)
+	stk_a = gen_stack(num_elements, &av[1]);
+	stk_b = gen_stack(num_elements, &av[1]);
+	if (!stk_a)
 		return (1);
-	for (size_t i = 0; i<num_elements; i++)
+	for(size_t i = 1; i <= num_elements; ++i)
 	{
-		ft_printf("rotate %i time.\n", i);
-		print_stack(stk);
-		rotate(stk);
+		push(stk_a, stk_b);
+		ft_printf("push %i time.\n", i);
+		print_stack(stk_a);
+		print_stack(stk_b);
+	
 	}
 
-	free_stack(stk);
+
+	free_stack(stk_a);
+	free_stack(stk_b);
 }

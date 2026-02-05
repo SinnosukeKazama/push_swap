@@ -13,21 +13,6 @@ t_dllist	*ft_dllstnew(void *content)
 	return (node_new);
 }
 
-void	ft_dllstadd_back(t_dllist **lst, t_dllist *new)
-{
-	t_dllist	*p;
-
-	p = *lst;
-	if (!p)
-	{
-		*lst = new;
-		return ;
-	}
-	while (p->next)
-		p = p->next;
-	p->next = new;
-	new->prev = p;
-}
 
 t_dllist	*gen_dllist_loop(const size_t num_elements, char **contents)
 {
@@ -41,7 +26,7 @@ t_dllist	*gen_dllist_loop(const size_t num_elements, char **contents)
 	{//must error check
 		node_new = ft_dllstnew(contents[i]);
 		if (!node_new)
-			if (free_dllist(node_begin, i), NULL);
+			return(free_dllist(node_begin, i), NULL);
 		ft_dllstadd_back(&node_begin, node_new);
 		++i;
 	}

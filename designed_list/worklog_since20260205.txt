@@ -1,0 +1,18 @@
+
+設計ルール
+
+1.dllist 関数は
+  構造だけを扱い、状態は扱わない
+
+2.stack 操作関数は
+  構造＋num_elements を必ず整合させる
+
+3.num_elements を変更できるのは
+  stack レイヤ以上のみ
+<image of the Layer>
+STACK------------------------------
+ link of double linked.
+ number of The node.
+ (Able to rewrite link of number.
+LIST OF DOUBLE LINKED---------------
+ (Able to add a node, delete a node.

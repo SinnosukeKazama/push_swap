@@ -12,6 +12,7 @@ t_stack	*gen_stack(size_t num_elements, char **contents)
 	if (!stk->head)
 		return (free(stk), NULL);
 	stk->num_elements = num_elements;
+	return (stk);
 }
 
 void	free_stack(t_stack *stk)

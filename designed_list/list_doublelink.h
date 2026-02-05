@@ -13,6 +13,7 @@ typedef struct s_dllist
 //Fanction of allocate or free
 t_dllist	*ft_dllstnew(void *content);
 void	ft_dllstadd_back(t_dllist **lst, t_dllist *new);
+void	ft_dllstadd_front(t_dllist **lst, t_dllist *new);
 t_dllist	*gen_dllist_loop(const size_t num_elements, char **contents);
 void	free_dllist(t_dllist *node_begin, size_t num_node);
 
