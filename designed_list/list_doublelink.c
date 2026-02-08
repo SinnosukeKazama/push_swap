@@ -1,6 +1,6 @@
 #include "list_doublelink.h"
 
-t_dllist	*ft_dllstnew(void *content)
+t_dllist	*ft_dllstnew(int content)
 {
 	t_dllist	*node_new;
 
@@ -14,7 +14,7 @@ t_dllist	*ft_dllstnew(void *content)
 }
 
 
-t_dllist	*gen_dllist_loop(const size_t num_elements, char **contents)
+t_dllist	*gen_dllist_loop(const size_t num_elements, int *contents)
 {
 	size_t	i;
 	t_dllist	*node_begin;
@@ -57,7 +57,7 @@ void	print_dllist(t_dllist *node_begin, size_t num_elements)
 	p = node_begin;
 	while (num_elements)
 	{
-		ft_printf("%s", p->content);
+		ft_printf("%i", p->content);
 		p = p->next;
 		--num_elements;
 	}
