@@ -6,11 +6,11 @@
 /*   By: skazama <skazama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:10:17 by skazama           #+#    #+#             */
-/*   Updated: 2025/11/01 21:03:50 by skazama          ###   ########.fr       */
+/*   Updated: 2026/02/09 14:10:13 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "grewout_libft.h"
+#include "../header/grewout_libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

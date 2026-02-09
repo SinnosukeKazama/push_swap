@@ -1,4 +1,4 @@
-#include "operate_stack.h"
+#include "../header/operate_stack.h"
 
 
 void	push(t_stack *dest, t_stack *src){

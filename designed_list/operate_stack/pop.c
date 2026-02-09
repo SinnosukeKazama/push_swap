@@ -1,4 +1,4 @@
-#include "operate_stack.h"
+#include "../header/operate_stack.h"
 
 t_dllist	*pop (t_stack *src)
 {

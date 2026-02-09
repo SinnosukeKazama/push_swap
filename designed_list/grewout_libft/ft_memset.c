@@ -6,11 +6,11 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:23:20 by skazama           #+#    #+#             */
-/*   Updated: 2025/10/31 14:23:32 by skazama          ###   ########.fr       */
+/*   Updated: 2026/02/09 14:10:46 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "grewout_libft.h"
+#include "../header/grewout_libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

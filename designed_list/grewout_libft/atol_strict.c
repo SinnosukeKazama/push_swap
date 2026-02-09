@@ -6,11 +6,11 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:09:23 by skazama           #+#    #+#             */
-/*   Updated: 2025/10/31 14:09:37 by skazama          ###   ########.fr       */
+/*   Updated: 2026/02/09 14:09:26 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "grewout_libft.h"
+#include "../header/grewout_libft.h"
 
 static int	ft_power(int base, int exponent)
 {

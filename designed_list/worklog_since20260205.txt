@@ -16,3 +16,15 @@ STACK------------------------------
  (Able to rewrite link of number.
 LIST OF DOUBLE LINKED---------------
  (Able to add a node, delete a node.
+
+FLOW---
+main
+└ parse_int_array      ← 入力検証（完成済み）
+└ gen_stack            ← A生成 / B空生成（完成済み）
+└ prog_sort            ← ★アルゴリズム層
+   └ op_xxx            ← 操作ラッパ（出力も担当）
+      └ push/pop/swap  ← データ構造層（既に完成）
+      
+参考サイト：
+奇数ソート　http://www.dais.is.tohoku.ac.jp/~shioura/teaching/ad11/ad11-03.pdf
+

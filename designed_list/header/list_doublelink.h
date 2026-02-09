@@ -4,8 +4,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <limits.h>
-#include "./libft/libft.h"
-#include "./ft_printf/source_code/header/ft_printf.h"
+#include "../ft_printf/source_code/header/ft_printf.h"
 #include "grewout_libft.h"
 typedef struct s_dllist
 {
