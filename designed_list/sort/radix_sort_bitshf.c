@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#define RADIX 10
+#define RADIX 256
 #define RANGE_ARRAY 256
-#define DIGIT_MAX 10
+#define DIGIT_MAX 4
 //
 #include <time.h>
 
@@ -47,7 +47,7 @@ int negamin_array(int *a, const size_t num_col)
 } 
 
 
-void	division_values(const int *a, int bucket[RADIX][RANGE_ARRAY], size_t count[RADIX], const size_t radix)
+void	division_values(const int *a, int bucket[RADIX][RANGE_ARRAY], size_t count[RADIX], const size_t logr)
 {
 	size_t row_bucket;
 	size_t	i;
@@ -58,7 +58,8 @@ void	division_values(const int *a, int bucket[RADIX][RANGE_ARRAY], size_t count[
 	while (i < RANGE_ARRAY)
 	{
 		la = (long long)a[i] - INT_MIN;
-		row_bucket = (la / radix) % RADIX;//Will be index;
+		row_bucket = (la >> logr) & 255;//Will be index;
+//printf("#row_bucket=%zu\n", row_bucket);
 		bucket[row_bucket][count[row_bucket]] = a[i];//buketに振り分け。基数ごとに分ける。
 		++count[row_bucket];//index_col 更新。
 		++i;
@@ -89,18 +90,18 @@ void	radix_sort(int *a)
 	int bucket[RADIX][RANGE_ARRAY];
 	size_t count[RADIX];
 	int digit;
-	int radix;
+	int logr;
 
 	digit = 0;
-	radix = 1;
+	logr = 1;
 	while (digit < DIGIT_MAX)
 	{
 		//分配
-		division_values(a, bucket, count, radix);
+		division_values(a, bucket, count, logr);
 		//回収
 		collect_values(a, bucket, count);
 		++digit;
-		radix *= 10;
+		logr += 8;
 	}
 }
 int main(void)
@@ -123,8 +124,13 @@ int main(void)
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	printf("time = %lld ns\n", diff_ns(start, end));
 //
+	int old = a[0];
 	for (size_t i = 0; i < RANGE_ARRAY; ++i){
-		printf("%i ", a[i]);
+		if (old > a[i])
+			printf("Error.\n");
+		else
+			printf("%i ", a[i]);
+		old = a[i];
 	}
 	puts("");
 }
