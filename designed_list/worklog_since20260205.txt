@@ -24,7 +24,20 @@ main
 └ prog_sort            ← ★アルゴリズム層
    └ op_xxx            ← 操作ラッパ（出力も担当）
       └ push/pop/swap  ← データ構造層（既に完成）
-      
+   
+main
+└引数解析。
+	parse_int_array      ← 入力検証（完成済み）
+└stack A,B作成。
+	gen_stack            ← A生成 / B空生成（完成済み）
+└index付与。
+	（未完成）
+└sort.
+	└ prog_sort            ← ★アルゴリズム層（未完成）
+   		└ op_xxx            ← 操作ラッパ（出力も担当）
+      		└ push/pop/swap  ← データ構造層（既に完成）
+└終了。
+   
 参考サイト：
 radix sort:　
 http://www.dais.is.tohoku.ac.jp/~shioura/teaching/ad11/ad11-03.pdf
@@ -37,3 +50,4 @@ https://ufcpp.net/study/algorithm/sort_radix.html
 
 結果１）10進数：time = 18873 ns
 結果２）bit shift:time = 61614 ns
+
