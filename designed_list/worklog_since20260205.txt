@@ -30,11 +30,10 @@ radix sort:　
 http://www.dais.is.tohoku.ac.jp/~shioura/teaching/ad11/ad11-03.pdf
 https://ufcpp.net/study/algorithm/sort_radix.html
 
-検証：
-基数ソートの速さ。
-条件：INT_MIN<=値範囲<=INT_MAX.
-１）基数＝１０、桁数＝１０（値範囲から。）。
-２）基数＝２５６，桁数＝４（値範囲から。int=4 byteから。）
+検証：基数ソートの速さ。
+ 条件：INT_MIN<=値範囲<=INT_MAX.
+ １）基数＝１０、桁数＝１０（値範囲から。）。
+ ２）基数＝２５６，桁数＝４（値範囲から。int=4 byteから。）
 
-結果１）10進数：time = 18873 ns 
+結果１）10進数：time = 18873 ns
 結果２）bit shift:time = 61614 ns
