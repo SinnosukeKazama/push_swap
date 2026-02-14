@@ -8,6 +8,7 @@ t_dllist	*ft_dllstnew(int content)
 	if (!node_new)
 		return (NULL);
 	node_new->content = content;
+	node_new->index = 0;
 	node_new->next = NULL;
 	node_new->prev = NULL;
 	return (node_new);

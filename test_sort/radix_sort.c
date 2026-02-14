@@ -1,9 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#define RADIX 10
-#define RANGE_ARRAY 256
-#define DIGIT_MAX 10
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/14 14:09:03 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 14:09:53 by skazama          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "../header/sort.h"
 //
 #include <time.h>
 

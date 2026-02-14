@@ -10,6 +10,7 @@ typedef struct s_dllist
 {
 	int		content;
 	size_t		num_elements;
+	size_t		index;
 	struct s_dllist	*next;
 	struct s_dllist	*prev;
 }t_dllist;

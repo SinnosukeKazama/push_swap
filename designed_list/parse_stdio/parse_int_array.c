@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_int_array.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/14 19:06:06 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 19:07:59 by skazama          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/parse_stdio.h"
 
 static bool	is_overlapping(const int element, const int *table, const size_t size_table)
