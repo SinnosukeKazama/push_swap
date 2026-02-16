@@ -1,5 +1,21 @@
 #include "../header/list_doublelink.h"
 
+static void	ft_dllstadd_back(t_dllist **lst, t_dllist *new)
+{
+	t_dllist	*p;
+
+	p = *lst;
+	if (!p)
+	{
+		*lst = new;
+		return ;
+	}
+	while (p->next)
+		p = p->next;
+	p->next = new;
+	new->prev = p;
+}
+
 t_dllist	*gen_dllist_loop(const size_t num_elements, int *contents)
 {
 	size_t	i;

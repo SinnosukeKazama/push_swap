@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 16:32:10 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:32:12 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:29:38 by skazama           #+#    #+#             */
+/*   Updated: 2025/10/31 14:29:41 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../header/grewout_libft.h"
 
-#include "../header/rap_operate_stack.h"
-void	rrr(t_stack *a, t_stack *b)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	rotate_rev(a);
-	rotate_rev(b);
-	write(1, "rrr\n", 4);
+	size_t	i;
+
+	i = 0;
+	if (size > 0)
+	{
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			++i;
+		}
+		dest[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

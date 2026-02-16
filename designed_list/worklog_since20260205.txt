@@ -1,4 +1,9 @@
-
+次回作業予定
+2/16:
+	1)名前変更 list_doublelink -> generaling_list_doublelink
+	1.1）ヘッダファイル整理。main.cでpush_swap.hのみインクルード可能へ。
+	２）makefile
+	3)sort最適化.手数を減らす。その案を考える。
 設計ルール
 
 1.dllist 関数は
@@ -27,6 +32,9 @@ main
    
 main
 └引数解析。
+	parse_chr_array	(未完成)
+		└
+		└apend_ptr
 	parse_int_array      ← 入力検証（完成済み）
 └stack A,B作成。
 	gen_stack            ← A生成 / B空生成（完成済み）
@@ -51,3 +59,43 @@ https://ufcpp.net/study/algorithm/sort_radix.html
 結果１）10進数：time = 18873 ns
 結果２）bit shift:time = 61614 ns
 
+ARGに任意の乱数入れる。
+ARG=$(shuf -i 1-50000 -n 2000 | tr '\n' ' ' | sed 's/ $//')
+
+ベンチマークについて課題要件から。
+• For maximum project validation (100%) and eligibility for bonuses, you must:
+	◦ Sort 100 random numbers in fewer than 700 operations.
+	◦ Sort 500 random numbers in no more than 5500 operations.
+
+• For minimal project validation (which implies a minimum grade of 80%), you can succeed with different averages:
+	◦ 100 numbers in under 1100 operations and 500 numbers in under 8500 operations
+	◦ 100 numbers in under 700 operations and 500 numbers in under 11500 operations
+	◦ 100 numbers in under 1300 operations and 500 numbers in under 5500 operations
+結果：20250216
+	n=100,  ope=1084
+	n=500,  ope=6784
+
+radix_sort & p_sの特記事項
+理論手数
+	手数 ≒ n × 最大bit数 × 平均操作回数の経験値
+	(最大bit数について。)
+	n=500から、 最大インデックス=n-1=499;
+	最大bit数 = 499のビット数 = 9;
+	(平均操作回数の経験値について。)
+	設計上sortの流れ：
+			 ope1	2
+			 (1/2)	
+		(1/2) bit=0 pb();	pa();
+			 bit=1 ra();
+	この時、例としてn=500とする。
+	ope1にて手数平均 = 500/2 = 250;
+	よって 手数平均pb=ra=250;
+	また、bit=0に着目して、手数平均=500/2=250;
+	よって手数平均pb=pa=250;
+	まとめて、手数平均pa=pb=ra=250;
+	手数合計 = pa + pb + ra = 250+250+250 = 750;
+	n=500から、平均操作回数の経験値 = 手数合計/n = 750/500 = 1.5;
+
+	(理論手数と実測の比較)
+	n=500のとき、理論手数 = 500 * 9 * 1.5 = 6750;
+	実測値=6784に近い。
