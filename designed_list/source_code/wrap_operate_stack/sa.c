@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 16:32:51 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:32:52 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:32:22 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:32:29 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../header/rap_operate_stack.h"
+#include "../header/wrap_operate_stack.h"
 
-void	ss(t_stack *a, t_stack *b)
+void	sa(t_stack *a, t_stack *b)
 {
+	(void)b;
 	swap(a);
-	swap(b);
-	write(1, "ss\n", 3);
+	write(1, "sa\n", 3);
 }

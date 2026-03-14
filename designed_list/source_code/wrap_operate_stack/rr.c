@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 16:18:47 by skazama           #+#    #+#             */
-/*   Updated: 2025/12/10 16:19:34 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:31:15 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:31:20 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
-
-unsigned int	ft_abs(const int n)
+#include "../header/wrap_operate_stack.h"
+void	rr(t_stack *a, t_stack *b)
 {
-	if (n < 0)
-		return ((unsigned int)(-(long long)n));
-	else
-		return ((unsigned int)n);
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
+

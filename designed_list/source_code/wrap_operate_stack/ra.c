@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "../header/rap_operate_stack.h"
+#include "../header/wrap_operate_stack.h"
 
 void	ra(t_stack *a, t_stack *b)
 {

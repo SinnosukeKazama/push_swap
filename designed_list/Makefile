@@ -6,7 +6,7 @@ SRC_DIR	:= source_code
 GLD_DIR := $(SRC_DIR)/generaling_list_doublelink
 GS_DIR  := $(SRC_DIR)/generaling_stack
 OS_DIR  := $(SRC_DIR)/operate_stack
-ROS_DIR := $(SRC_DIR)/rap_operate_stack
+WOS_DIR := $(SRC_DIR)/wrap_operate_stack
 GL_DIR  := $(SRC_DIR)/grewout_libft
 PA_DIR  := $(SRC_DIR)/parse_arg
 S_DIR   := $(SRC_DIR)/sort
@@ -22,17 +22,17 @@ SRCS 	:= $(GLD_DIR)/free_dllist.c\
 	   $(OS_DIR)/rotate.c\
 	   $(OS_DIR)/rotate_rav.c\
 	   $(OS_DIR)/swap.c\
-	   $(ROS_DIR)/pa.c\
-	   $(ROS_DIR)/pb.c\
-	   $(ROS_DIR)/ra.c\
-	   $(ROS_DIR)/rb.c\
-	   $(ROS_DIR)/rr.c\
-	   $(ROS_DIR)/rra.c\
-	   $(ROS_DIR)/rrb.c\
-	   $(ROS_DIR)/rrr.c\
-	   $(ROS_DIR)/sa.c\
-	   $(ROS_DIR)/sb.c\
-	   $(ROS_DIR)/ss.c\
+	   $(WOS_DIR)/pa.c\
+	   $(WOS_DIR)/pb.c\
+	   $(WOS_DIR)/ra.c\
+	   $(WOS_DIR)/rb.c\
+	   $(WOS_DIR)/rr.c\
+	   $(WOS_DIR)/rra.c\
+	   $(WOS_DIR)/rrb.c\
+	   $(WOS_DIR)/rrr.c\
+	   $(WOS_DIR)/sa.c\
+	   $(WOS_DIR)/sb.c\
+	   $(WOS_DIR)/ss.c\
 	   $(GL_DIR)/atol_strict.c\
 	   $(GL_DIR)/ft_calloc.c\
 	   $(GL_DIR)/ft_isdigit.c\

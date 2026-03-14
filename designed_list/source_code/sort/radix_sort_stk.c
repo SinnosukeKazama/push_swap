@@ -25,7 +25,7 @@ static	size_t	max_bitdigit(t_stack *stk)
 
 static void pass_bit(t_stack *a, t_stack *b, size_t bit)
 {
-	size_t	size = a->num_elements;
+	const size_t	size = a->num_elements;
 	size_t	i = 0;
 
 	while (i < size)

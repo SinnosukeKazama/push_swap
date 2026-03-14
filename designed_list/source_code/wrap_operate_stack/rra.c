@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_digit.c                                      :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skazama <skazama@student.42.fr>            +#+  +:+       +#+        */
+/*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 16:15:48 by skazama           #+#    #+#             */
-/*   Updated: 2025/12/20 17:16:39 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:31:29 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:31:34 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
 
-int	count_digit(const int n, const unsigned int base)
+#include "../header/wrap_operate_stack.h"
+void	rra(t_stack *a, t_stack *b)
 {
-	unsigned int	u_n;
-	int				digit;
-
-	u_n = ft_abs(n);
-	digit = 1;
-	while (u_n >= base)
-	{
-		u_n /= base;
-		digit++;
-	}
-	return (digit);
+	(void)b;
+	rotate_rev(a);
+	write(1, "rra\n", 4);
 }

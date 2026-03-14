@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_digit_unsigned.c                             :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skazama <skazama@student.42.fr>            +#+  +:+       +#+        */
+/*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 16:14:44 by skazama           #+#    #+#             */
-/*   Updated: 2025/12/20 17:16:11 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:32:51 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:32:52 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
 
-int	count_digit_unsigned(unsigned int un, const unsigned int base)
+#include "../header/wrap_operate_stack.h"
+
+void	ss(t_stack *a, t_stack *b)
 {
-	int	digit;
-
-	digit = 1;
-	while (un >= base)
-	{
-		un /= base;
-		digit++;
-	}
-	return (digit);
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
 }

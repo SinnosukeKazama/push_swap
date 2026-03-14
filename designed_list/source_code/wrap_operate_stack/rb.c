@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_char.c                                      :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 17:01:28 by skazama           #+#    #+#             */
-/*   Updated: 2025/12/20 17:01:33 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:30:51 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:31:05 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
-
-int	ft_put_char(char c)
+#include "../header/wrap_operate_stack.h"
+void	rb(t_stack *a, t_stack *b)
 {
-	write(1, &c, 1);
-	return (1);
+	(void)a;
+	rotate(b);
+	write(1, "rb\n", 3);
 }

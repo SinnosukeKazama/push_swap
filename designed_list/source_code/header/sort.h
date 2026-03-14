@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "generaling_stack.h"
-#include "rap_operate_stack.h"
+#include "wrap_operate_stack.h"
 #define RADIX 10
 #define RANGE_ARRAY 256//must be not const value...
 #define DIGIT_MAX 10

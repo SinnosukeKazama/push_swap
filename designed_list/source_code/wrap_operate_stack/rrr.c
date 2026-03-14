@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 16:32:22 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:32:29 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:32:10 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:32:12 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../header/rap_operate_stack.h"
-
-void	sa(t_stack *a, t_stack *b)
+#include "../header/wrap_operate_stack.h"
+void	rrr(t_stack *a, t_stack *b)
 {
-	(void)b;
-	swap(a);
-	write(1, "sa\n", 3);
+	rotate_rev(a);
+	rotate_rev(b);
+	write(1, "rrr\n", 4);
 }

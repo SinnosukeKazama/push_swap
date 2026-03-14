@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 16:30:11 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:30:18 by skazama          ###   ########.fr       */
+/*   Created: 2026/02/14 16:31:56 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/14 16:32:03 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/rap_operate_stack.h"
-void	pb(t_stack *a, t_stack *b)
+
+#include "../header/wrap_operate_stack.h"
+void	rrb(t_stack *a, t_stack *b)
 {
-	push(b, a);
-	write(1, "pb\n", 3);
+	(void)a;
+	rotate_rev(b);
+	write(1, "rrb\n", 4);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rap_operate_stack.h                                :+:      :+:    :+:   */
+/*  wrap_operate_stack.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAP_OPERATE_STACK_H
-#define RAP_OPERATE_STACK_H
+#ifndef WRAP_OPERATE_STACK_H
+#define WRAP_OPERATE_STACK_H
 #include <unistd.h>
 #include "generaling_stack.h"
 #include "operate_stack.h"
@@ -27,4 +27,4 @@ void rra(t_stack *a, t_stack *b);
 void rrb(t_stack *a, t_stack *b);
 void rrr(t_stack *a, t_stack *b);
 
-#endif//RAP_OPERATE_STACK_H
+#endif//WRAP_OPERATE_STACK_H
