@@ -48,6 +48,8 @@ SRCS 	:= $(GLD_DIR)/free_dllist.c\
 	   $(S_DIR)/assign_index.c\
 	   $(S_DIR)/radix_sort_ary.c\
 	   $(S_DIR)/radix_sort_stk.c\
+	   $(S_DIR)/is_sorted.c\
+	   $(S_DIR)/sort_under3.c\
 	   $(SRC_DIR)/main.c
 
 

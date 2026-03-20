@@ -59,7 +59,7 @@ void	assign_index(t_stack *stk)
 
 	array = copy_stk_to_ary(stk);
 	if (!array)
-		return ;
+		return ;//error
 	radix_sort_ary(array, size);
 	put_index(stk->head, array, size);
 	free(array);

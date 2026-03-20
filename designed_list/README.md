@@ -34,7 +34,16 @@
 課題から与えられたチェッカーを使う。
 
     ARG="4 67 3 87 23"
+または
+    ARG=$(python3 - <<'PY'
+import random
+print(' '.join(str(random.randint(-2**31, 2**31-1)) for _ in range(500)))
+PY
+)  
+実行 
     ./push_swap $ARG | ./checker_OS $ARG
+実行して操作回数を見る。
+    ./push_swap $ARG | tee out.txt | wc -l && sort out.txt | uniq -c
 
 ## 設計
 #### 部品

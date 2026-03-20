@@ -66,14 +66,18 @@ int main(int ac, char **av)
 	free_wp(c_std_inputs);
 	if(!i_std_inputs)
 		return (write(1, "Error\n", 6), 1);
+	if(is_sorted(num_elements, i_std_inputs))
+		return (free(i_std_inputs), 0);
 	stk_a = gen_stack(num_elements, i_std_inputs);
 	stk_b = gen_stack(0, NULL);
 	free(i_std_inputs);
 	if (!stk_a)
 		return (1);
 	assign_index(stk_a);
-
-	radix_sort_stk(stk_a, stk_b);
+	if (num_elements <= 3)
+		sort_under3(stk_a, stk_b);
+	else
+		radix_sort_stk(stk_a, stk_b);
 
 	//print_stack(stk_a);
 

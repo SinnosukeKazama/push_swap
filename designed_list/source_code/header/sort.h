@@ -34,5 +34,7 @@ void	sort_stack(t_stack *a, t_stack *b);
 void	radix_sort_ary(int *a, size_t size);
 void	radix_sort_stk(t_stack *a, t_stack *b);
 void	assign_index(t_stack *stk);
+int	is_sorted(const size_t num_elements, const int *array);
+void	sort_under3(t_stack *a, t_stack *b);
 
 #endif//SORT_H
