@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:51 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:40:53 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:28:04 by skazama           #+#    #+#             */
+/*   Updated: 2025/11/09 11:20:03 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/operate_stack.h"
+#include "../header/grewout_libft.h"
 
-void	push(t_stack *dest, t_stack *src)
+char	*ft_strdup(const char *s)
 {
-	t_dllist	*old_dest_head;
-	t_dllist	*poped;
+	const size_t	element_n = ft_strlen(s) + 1;
+	char			*dest;
 
-	if (!src)
-		return ;
-	poped = pop(src);
-	if (!poped)
-		return ;
-	old_dest_head = dest->head;
-	ft_dllstadd_front(&old_dest_head, poped);
-	dest->head = poped;
-	dest->num_elements++;
+	if (!s)
+		return (ft_calloc(element_n, sizeof(char)));
+	dest = (char *)ft_calloc(element_n, sizeof(char));
+	if (dest)
+	{
+		ft_strlcpy(dest, s, element_n);
+		return (dest);
+	}
+	return (NULL);
 }

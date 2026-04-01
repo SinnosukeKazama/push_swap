@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:51 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:40:53 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:23:20 by skazama           #+#    #+#             */
+/*   Updated: 2026/02/09 14:10:46 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/operate_stack.h"
+#include "../header/grewout_libft.h"
 
-void	push(t_stack *dest, t_stack *src)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	t_dllist	*old_dest_head;
-	t_dllist	*poped;
+	unsigned char	*ptr_s;
+	unsigned int	i;
 
-	if (!src)
-		return ;
-	poped = pop(src);
-	if (!poped)
-		return ;
-	old_dest_head = dest->head;
-	ft_dllstadd_front(&old_dest_head, poped);
-	dest->head = poped;
-	dest->num_elements++;
+	ptr_s = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr_s[i] = c;
+		++i;
+	}
+	return (s);
 }

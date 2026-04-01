@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_under3.c                                      :+:      :+:    :+:   */
+/*   wplen.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:42:43 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 14:19:48 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 11:37:23 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/01 11:57:11 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/sort.h"
+#include "../header/parse_arg.h"
 
-static void	sort_3(t_stack *a, t_stack *b)
+size_t	wplen(char **p)
 {
-	t_dllist	*prev;
+	size_t	i;
 
-	prev = a->head->prev;
-	while (a->head->index != 2)
-	{
-		prev = a->head;
-		ra(a, b);
-	}
-	if (prev->index == 0)
-	{
-		sa(a, b);
-		rra(a, b);
-	}
-	else
-		ra(a, b);
-}
-
-void	sort_under3(t_stack *a, t_stack *b)
-{
-	if (a->num_elements == 2)
-		sa(a, b);
-	else if (a->num_elements == 3)
-		sort_3(a, b);
+	i = 0;
+	while (p[i] != NULL)
+		++i;
+	return (i);
 }
