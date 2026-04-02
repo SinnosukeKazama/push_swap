@@ -12,44 +12,48 @@
 
 #include "./header/push_swap.h"
 
-static bool	parse_inputs(size_t *n_ele, t_stack **a, t_stack **b, char **av)
+typedef struct	s_ps_info
 {
-	char	**inputs_c;
-	int		*inputs_i;
+	size_t	num_elements;
+	t_stack	*a;
+	t_stack	*b;
+}	t_ps_info;
+static bool	parse_inputs(t_ps_info *info, char **av)
+{
+	char	**str_array;
+	int		*array;
 
-	inputs_c = parse_chr_array(n_ele, &av[1]);
-	if (!inputs_c)
+	str_array = parse_chr_array(&info->num_elements, &av[1]);
+	if (!str_array)
 		return (write(1, "Error\n", 6), false);
-	inputs_i = parse_int_array(*n_ele, inputs_c);
-	free_wp(inputs_c);
-	if (!inputs_i)
+	array = parse_int_array(info->num_elements, str_array);
+	free_wp(str_array);
+	if (!array)
 		return (write(1, "Error\n", 6), false);
-	if (is_sorted(*n_ele, inputs_i))
-		return (free(inputs_i), false);
-	*a = gen_stack(*n_ele, inputs_i);
+	if (is_sorted(info->num_elements, array))
+		return (free(array), false);
+	*a = gen_stack(info->num_elements, array);
 	if (!(*a))
-		return (free(inputs_i), false);
+		return (free(array), false);
 	*b = gen_stack(0, NULL);
 	if (!(*b))
-		return (free(inputs_i), false);
-	return (free(inputs_i), true);
+		return (free(array), false);
+	return (free(array), true);
 }
 
 int	main(int ac, char **av)
 {
-	size_t	num_elements;
-	t_stack	*stk_a;
-	t_stack	*stk_b;
+	t_ps_info	info;
 
-	num_elements = ac - 1;
-	if (!parse_inputs(&num_elements, &stk_a, &stk_b, av))
+	info.num_elements = ac - 1;
+	if (!parse_inputs(&info, av))
 		return (1);
-	assign_index(stk_a);
+	assign_index(info.a);
 	if (num_elements <= 3)
-		sort_under3(stk_a, stk_b);
+		sort_under3(info.a, info.b);
 	else
-		radix_sort_stk(stk_a, stk_b);
-	free_stack(stk_a);
-	free_stack(stk_b);
+		radix_sort_stk(info.a, info.b);
+	free_stack(info.a);
+	free_stack(info.b);
 	return (0);
 }

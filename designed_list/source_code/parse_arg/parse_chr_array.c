@@ -43,13 +43,17 @@ static char	**append(char **ptr, char *src)
 	ptr_new[i + 1] = NULL;
 	return (ptr_new);
 }
-
-static char	**divide_spc(char **rt, char *p)
+//static int	flag返す。
+static char	**divide_space(char **rt, char *p)
 {
 	char	**rt_new;
 	char	**tmp;
 	size_t	i;
 
+	/*
+	is_contains_space(p))
+		return (0)
+	*/
 	tmp = ft_split(p, ' ');
 	if (!tmp)
 		return (free_wp(rt), NULL);
@@ -65,6 +69,7 @@ static char	**divide_spc(char **rt, char *p)
 	}
 	free(tmp);
 	return (rt);
+	//return (1);
 }
 
 static char	**gen_array(char ***p_rt, char **rt_new, char **p_dup, char **p_src)
@@ -74,12 +79,18 @@ static char	**gen_array(char ***p_rt, char **rt_new, char **p_dup, char **p_src)
 	i = -1;
 	while (p_src[++i] != NULL)
 	{
+		/*改善
+		if (divide_space(p_src))
+			return (NULL);
+		*/
+		//
 		if (is_contains_space(p_src[i]))
 		{
 			*p_rt = divide_spc(*p_rt, p_src[i]);
 			if (!*p_rt)
 				return (NULL);
 		}
+		//
 		else
 		{
 			*p_dup = ft_strdup(p_src[i]);
