@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*  wrap_operate_stack.h                                :+:      :+:    :+:   */
+/*   wrap_operate_stack.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 16:14:33 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:29:42 by skazama          ###   ########.fr       */
+/*   Updated: 2026/04/02 15:03:09 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRAP_OPERATE_STACK_H
 # define WRAP_OPERATE_STACK_H
 # include <unistd.h>
-# include "generaling_stack.h"
 # include "operate_stack.h"
 
 void	sa(t_stack *a, t_stack *b);

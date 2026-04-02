@@ -6,7 +6,7 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 14:05:43 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 18:28:46 by skazama          ###   ########.fr       */
+/*   Updated: 2026/04/02 15:09:02 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "generaling_stack.h"
 # include "wrap_operate_stack.h"
 
 typedef struct s_sort

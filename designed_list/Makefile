@@ -3,25 +3,25 @@ CFLAGS	:= -Wall -Wextra -Werror
 NAME	:= push_swap
 OBJ_DIR := object
 SRC_DIR	:= source_code
-GLD_DIR := $(SRC_DIR)/generaling_list_doublelink
-GS_DIR  := $(SRC_DIR)/generaling_stack
-OS_DIR  := $(SRC_DIR)/operate_stack
+LD_DIR := $(SRC_DIR)/list_doublelink
+STK_DIR  := $(SRC_DIR)/stack
+OSRT_DIR  := $(SRC_DIR)/operate_stack
 WOS_DIR := $(SRC_DIR)/wrap_operate_stack
 GL_DIR  := $(SRC_DIR)/grewout_libft
 PA_DIR  := $(SRC_DIR)/parse_arg
-S_DIR   := $(SRC_DIR)/sort
+SRT_DIR   := $(SRC_DIR)/sort
 
-SRCS 	:= $(GLD_DIR)/free_dllist.c\
-	   $(GLD_DIR)/ft_dllstadd_front.c\
-	   $(GLD_DIR)/ft_dllstnew.c\
-	   $(GLD_DIR)/gen_dllist_loop.c\
-	   $(GS_DIR)/free_stack.c\
-	   $(GS_DIR)/gen_stack.c\
-	   $(OS_DIR)/pop.c\
-	   $(OS_DIR)/push.c\
-	   $(OS_DIR)/rotate.c\
-	   $(OS_DIR)/rotate_rav.c\
-	   $(OS_DIR)/swap.c\
+SRCS 	:= $(LD_DIR)/free_dllist.c\
+	   $(LD_DIR)/ft_dllstadd_front.c\
+	   $(LD_DIR)/ft_dllstnew.c\
+	   $(LD_DIR)/gen_dllist_loop.c\
+	   $(STK_DIR)/free_stack.c\
+	   $(STK_DIR)/gen_stack.c\
+	   $(OSRT_DIR)/pop.c\
+	   $(OSRT_DIR)/push.c\
+	   $(OSRT_DIR)/rotate.c\
+	   $(OSRT_DIR)/rotate_rav.c\
+	   $(OSRT_DIR)/swap.c\
 	   $(WOS_DIR)/pa.c\
 	   $(WOS_DIR)/pb.c\
 	   $(WOS_DIR)/ra.c\
@@ -46,11 +46,11 @@ SRCS 	:= $(GLD_DIR)/free_dllist.c\
 	   $(PA_DIR)/wplen.c\
 	   $(PA_DIR)/parse_chr_array.c\
 	   $(PA_DIR)/parse_int_array.c\
-	   $(S_DIR)/assign_index.c\
-	   $(S_DIR)/radix_sort_ary.c\
-	   $(S_DIR)/radix_sort_stk.c\
-	   $(S_DIR)/is_sorted.c\
-	   $(S_DIR)/sort_under3.c\
+	   $(SRT_DIR)/assign_index.c\
+	   $(SRT_DIR)/radix_sort_ary.c\
+	   $(SRT_DIR)/radix_sort_stk.c\
+	   $(SRT_DIR)/is_sorted.c\
+	   $(SRT_DIR)/sort_under3.c\
 	   $(SRC_DIR)/main.c
 
 

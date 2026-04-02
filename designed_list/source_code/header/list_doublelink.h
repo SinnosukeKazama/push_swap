@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generaling_list_doublelink.h                       :+:      :+:    :+:   */
+/*   list_doublelink.h      		                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GENERALING_LIST_DOUBLELINK_H
-# define GENERALING_LIST_DOUBLELINK_H
+#ifndef LIST_DOUBLELINK_H
+# define LIST_DOUBLELINK_H
 # include "grewout_libft.h"
 # include <limits.h>
 # include <stdbool.h>
@@ -32,4 +32,4 @@ void		ft_dllstadd_front(t_dllist **lst, t_dllist *new);
 t_dllist	*gen_dllist_loop(const size_t num_elements, int *contents);
 void		free_dllist(t_dllist *node_begin, size_t num_node);
 
-#endif// GENERALING_LIST_DOUBLELINK_H
+#endif//LIST_DOUBLELINK_H

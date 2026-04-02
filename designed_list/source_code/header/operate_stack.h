@@ -6,13 +6,13 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 16:14:01 by skazama           #+#    #+#             */
-/*   Updated: 2026/02/14 16:14:17 by skazama          ###   ########.fr       */
+/*   Updated: 2026/04/02 15:01:53 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATE_STACK_H
 # define OPERATE_STACK_H
-# include "generaling_stack.h"
+# include "stack.h"
 
 void		swap(t_stack *a);
 t_dllist	*pop(t_stack *src);

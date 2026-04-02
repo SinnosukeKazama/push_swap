@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_dllstnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:51 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:40:53 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 10:38:17 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/02 14:59:28 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/operate_stack.h"
+#include "../header/list_doublelink.h"
 
-void	push(t_stack *dest, t_stack *src)
+t_dllist	*ft_dllstnew(int content)
 {
-	t_dllist	*old_dest_head;
-	t_dllist	*poped;
+	t_dllist	*node_new;
 
-	if (!src)
-		return ;
-	poped = pop(src);
-	if (!poped)
-		return ;
-	old_dest_head = dest->head;
-	ft_dllstadd_front(&old_dest_head, poped);
-	dest->head = poped;
-	dest->num_elements++;
+	node_new = (t_dllist *)ft_calloc(1, sizeof(t_dllist));
+	if (!node_new)
+		return (NULL);
+	node_new->content = content;
+	node_new->index = 0;
+	node_new->next = NULL;
+	node_new->prev = NULL;
+	return (node_new);
 }

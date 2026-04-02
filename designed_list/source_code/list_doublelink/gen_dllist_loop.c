@@ -6,11 +6,11 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 10:38:44 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:38:45 by skazama          ###   ########.fr       */
+/*   Updated: 2026/04/02 14:59:41 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/generaling_list_doublelink.h"
+#include "../header/list_doublelink.h"
 
 static void	ft_dllstadd_back(t_dllist **lst, t_dllist *new)
 {

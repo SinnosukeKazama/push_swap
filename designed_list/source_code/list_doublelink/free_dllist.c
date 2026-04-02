@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dllstnew.c                                      :+:      :+:    :+:   */
+/*   free_dllist.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:38:17 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:38:24 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 10:45:17 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/02 14:59:03 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/generaling_list_doublelink.h"
+#include "../header/list_doublelink.h"
 
-t_dllist	*ft_dllstnew(int content)
+void	free_dllist(t_dllist *node_begin, size_t num_elements)
 {
-	t_dllist	*node_new;
+	t_dllist	*p;
+	t_dllist	*p_next;
 
-	node_new = (t_dllist *)ft_calloc(1, sizeof(t_dllist));
-	if (!node_new)
-		return (NULL);
-	node_new->content = content;
-	node_new->index = 0;
-	node_new->next = NULL;
-	node_new->prev = NULL;
-	return (node_new);
+	p = node_begin;
+	while (num_elements)
+	{
+		p_next = p->next;
+		free(p);
+		p = p_next;
+		--num_elements;
+	}
 }

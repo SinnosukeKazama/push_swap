@@ -6,11 +6,11 @@
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 10:37:36 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:37:39 by skazama          ###   ########.fr       */
+/*   Updated: 2026/04/02 15:01:17 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/generaling_stack.h"
+#include "../header/stack.h"
 
 t_stack	*gen_stack(size_t num_elements, int *contents)
 {

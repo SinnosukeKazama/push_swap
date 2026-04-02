@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_wp.c                                          :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:41:36 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 10:41:41 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 10:37:21 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/02 15:01:03 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/parse_arg.h"
+#include "../header/stack.h"
 
-void	free_wp(char **p)
+void	free_stack(t_stack *stk)
 {
-	size_t	i;
-
-	if (!p)
+	if (!stk)
 		return ;
-	i = 0;
-	while (p[i] != NULL)
-	{
-		free(p[i]);
-		++i;
-	}
-	free(p);
+	free_dllist(stk->head, stk->num_elements);
+	free(stk);
 }
