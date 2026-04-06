@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.h                                        :+:      :+:    :+:   */
+/*   free_dp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:04 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 11:39:30 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 10:41:36 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/01 10:41:41 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARG_H
-# define PARSE_ARG_H
-# include <stdlib.h>
-# include <limits.h>
-# include <stddef.h>
-# include <stdbool.h>
-# include "grewout_libft.h"
+#include "tmp.h"
 
-int	parse_int_array(int **dest, const size_t num_elements, char **src);
-int	parse_chr_array(char ***dest, size_t *num_elements, char **p);
-void	free_wp(char **p);
-size_t	wplen(char **p);
+void	free_dp(char **p)
+{
+	size_t	i;
 
-#endif//PARSE_ARG_H
+	if (!p)
+		return ;
+	i = 0;
+	while (p[i] != NULL)
+	{
+		free(p[i]);
+		++i;
+	}
+	free(p);
+}

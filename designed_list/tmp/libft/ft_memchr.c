@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.h                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:04 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 11:39:30 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:20:12 by skazama           #+#    #+#             */
+/*   Updated: 2025/10/31 14:21:12 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARG_H
-# define PARSE_ARG_H
-# include <stdlib.h>
-# include <limits.h>
-# include <stddef.h>
-# include <stdbool.h>
-# include "grewout_libft.h"
+#include "libft.h"
 
-int	parse_int_array(int **dest, const size_t num_elements, char **src);
-int	parse_chr_array(char ***dest, size_t *num_elements, char **p);
-void	free_wp(char **p);
-size_t	wplen(char **p);
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const unsigned char	*ptr_s = (const unsigned char *)s;
+	size_t				i;
 
-#endif//PARSE_ARG_H
+	i = 0;
+	while (i < n)
+	{
+		if (ptr_s[i] == (unsigned char)c)
+			return ((void *)ptr_s + i);
+		++i;
+	}
+	return (NULL);
+}

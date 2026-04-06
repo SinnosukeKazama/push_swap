@@ -11,7 +11,12 @@
 /* ************************************************************************** */
 
 #include "../header/parse_arg.h"
-
+#define NO_ELEMENT 3
+#define OUT_OF_RANGE 4
+#define DUPLICATION_OF_ELEMENT 5
+#define ALLOCATE_FAILURE 0
+#define FUNCTION_SUCCESS 1
+//dup
 static bool	is_overlapping(int element, int *table, const size_t size_table)
 {
 	size_t	i;
@@ -25,29 +30,29 @@ static bool	is_overlapping(int element, int *table, const size_t size_table)
 	}
 	return (false);
 }
-
-int	*parse_int_array(const size_t num_elements, char **std_inputs)
+#include <stdio.h>
+int	parse_int_array(int **dest, const size_t num_elements, char **src)
 {
-	int			*elements;
 	long int	element;
 	size_t		i;
 
 	if (num_elements == 0)
-		return (NULL);
+		return (NO_ELEMENT);
 	i = 0;
-	elements = malloc(num_elements * sizeof(int));
-	if (!elements)
-		return (NULL);
+	*dest = malloc(num_elements * sizeof(int));
+	if (!(*dest))
+		return (ALLOCATE_FAILURE);
+	printf("af allc dest\n");
 	while (i < num_elements)
 	{
-		if (!atol_strict(&element, std_inputs[i]))
-			return (free(elements), NULL);
+		if (!atol_strict(&element, src[i]))
+			return (free(*dest), OUT_OF_RANGE);
 		if (element < INT_MIN || element > INT_MAX)
-			return (free(elements), NULL);
-		if (is_overlapping(element, elements, i))
-			return (free(elements), NULL);
-		elements[i] = element;
+			return (free(*dest), OUT_OF_RANGE);
+		if (is_overlapping(element, *dest, i))
+			return (free(*dest), DUPLICATION_OF_ELEMENT);
+		(*dest)[i] = element;
 		++i;
 	}
-	return (elements);
+	return (FUNCTION_SUCCESS);
 }

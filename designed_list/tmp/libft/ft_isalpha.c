@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:04 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 11:39:30 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:11:02 by skazama           #+#    #+#             */
+/*   Updated: 2025/10/31 14:11:09 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARG_H
-# define PARSE_ARG_H
-# include <stdlib.h>
-# include <limits.h>
-# include <stddef.h>
-# include <stdbool.h>
-# include "grewout_libft.h"
+#include "libft.h"
 
-int	parse_int_array(int **dest, const size_t num_elements, char **src);
-int	parse_chr_array(char ***dest, size_t *num_elements, char **p);
-void	free_wp(char **p);
-size_t	wplen(char **p);
-
-#endif//PARSE_ARG_H
+int	ft_isalpha(int c)
+{
+	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
+		return (1);
+	else
+		return (0);
+}

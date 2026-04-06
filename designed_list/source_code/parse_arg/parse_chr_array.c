@@ -12,6 +12,8 @@
 
 #include "../header/parse_arg.h"
 
+#define ALLOCATE_FAILURE 0
+#define FUNCTION_SUCCESS 1
 static bool	is_contains_space(const char *p)
 {
 	size_t	i;
@@ -86,7 +88,7 @@ static char	**gen_array(char ***p_rt, char **rt_new, char **p_dup, char **p_src)
 		//
 		if (is_contains_space(p_src[i]))
 		{
-			*p_rt = divide_spc(*p_rt, p_src[i]);
+			*p_rt = divide_space(*p_rt, p_src[i]);
 			if (!*p_rt)
 				return (NULL);
 		}
@@ -106,22 +108,21 @@ static char	**gen_array(char ***p_rt, char **rt_new, char **p_dup, char **p_src)
 	return (*p_rt);
 }
 
-char	**parse_chr_array(size_t *num_elements, char **p)
+int	parse_chr_array(char ***dest, size_t *num_elements, char **p)
 {
-	char	**rt;
 	char	**rt_new;
 	char	*dup;
 
 	rt_new = NULL;
 	dup = NULL;
-	rt = malloc(sizeof(char *));
-	if (!rt)
-		return (NULL);
-	rt[0] = NULL;
-	if (!gen_array(&rt, rt_new, &dup, p))
-		return (NULL);
-	*num_elements = wplen(rt);
-	return (rt);
+	*dest = malloc(sizeof(char *));
+	if (!(*dest))
+		return (ALLOCATE_FAILURE);
+	*dest[0] = NULL;
+	if (!gen_array(dest, rt_new, &dup, p))
+		return (ALLOCATE_FAILURE);
+	*num_elements = wplen(*dest);
+	return (FUNCTION_SUCCESS);
 }
 
 //divide_spc(); DOES NOT copy char, just copy ptr.

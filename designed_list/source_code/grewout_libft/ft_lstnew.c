@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:04 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 11:39:30 by skazama          ###   ########.fr       */
+/*   Created: 2025/10/31 14:17:45 by skazama           #+#    #+#             */
+/*   Updated: 2025/10/31 14:17:56 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARG_H
-# define PARSE_ARG_H
-# include <stdlib.h>
-# include <limits.h>
-# include <stddef.h>
-# include <stdbool.h>
-# include "grewout_libft.h"
+#include "libft.h"
 
-int	parse_int_array(int **dest, const size_t num_elements, char **src);
-int	parse_chr_array(char ***dest, size_t *num_elements, char **p);
-void	free_wp(char **p);
-size_t	wplen(char **p);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*node_new;
 
-#endif//PARSE_ARG_H
+	node_new = (t_list *)ft_calloc(1, sizeof(t_list));
+	if (!node_new)
+		return (NULL);
+	node_new->content = content;
+	node_new->next = NULL;
+	return (node_new);
+}

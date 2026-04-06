@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.h                                        :+:      :+:    :+:   */
+/*   tmp.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skazama <skazama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:40:04 by skazama           #+#    #+#             */
-/*   Updated: 2026/04/01 11:39:30 by skazama          ###   ########.fr       */
+/*   Created: 2026/04/01 10:39:30 by skazama           #+#    #+#             */
+/*   Updated: 2026/04/01 10:39:32 by skazama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARG_H
-# define PARSE_ARG_H
-# include <stdlib.h>
-# include <limits.h>
-# include <stddef.h>
+#ifndef GREWOUT_LIBFT_H
+# define GREWOUT_LIBFT_H
 # include <stdbool.h>
-# include "grewout_libft.h"
+# include <stdint.h>
+# include <stddef.h>
+# include <stdlib.h>
+#include"./libft/libft.h"
 
-int	parse_int_array(int **dest, const size_t num_elements, char **src);
-int	parse_chr_array(char ***dest, size_t *num_elements, char **p);
-void	free_wp(char **p);
-size_t	wplen(char **p);
 
-#endif//PARSE_ARG_H
+bool	atol_strict(long int *dest, const char *nptr);
+void	free_dp(char **p);
+int	parse_str_array(t_list **dest, size_t *num_elements, char **src);
+size_t	dplen(char **p);
+
+#endif//GREWOUT_LIBFT_H

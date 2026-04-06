@@ -11,34 +11,62 @@
 /* ************************************************************************** */
 
 #include "./header/push_swap.h"
+#define MAIN_SUCCESS 0
+#define MAIN_FAILURE 1
+#define ALLOCATE_FAILURE 0
+#define FUNCTION_SUCCESS 1
+#define ALREADY_SORTED 2
 
 typedef struct	s_ps_info
 {
 	size_t	num_elements;
 	t_stack	*a;
 	t_stack	*b;
-}	t_ps_info;
-static bool	parse_inputs(t_ps_info *info, char **av)
-{
 	char	**str_array;
 	int		*array;
+}	t_ps_info;
 
-	str_array = parse_chr_array(&info->num_elements, &av[1]);
-	if (!str_array)
-		return (write(1, "Error\n", 6), false);
-	array = parse_int_array(info->num_elements, str_array);
-	free_wp(str_array);
-	if (!array)
-		return (write(1, "Error\n", 6), false);
-	if (is_sorted(info->num_elements, array))
-		return (free(array), false);
-	*a = gen_stack(info->num_elements, array);
-	if (!(*a))
-		return (free(array), false);
-	*b = gen_stack(0, NULL);
-	if (!(*b))
-		return (free(array), false);
-	return (free(array), true);
+
+static int	parse_inputs(t_ps_info *info, char **av)
+{
+	if (parse_chr_array(&info->str_array, &info->num_elements, &av[1]) != FUNCTION_SUCCESS)
+		return (write(1, "Error\n", 6), ALLOCATE_FAILURE);
+	printf("af par_chr\n");
+	if (parse_int_array(&info->array, info->num_elements, info->str_array) != FUNCTION_SUCCESS)
+		return (write(1, "Error\n", 6), ALLOCATE_FAILURE);
+	printf("af par_int\n");
+	free_wp(info->str_array);
+	printf("af free str_array\n");
+	if (is_sorted(info->num_elements, info->array))
+		return (free(info->array), ALREADY_SORTED);
+	return (FUNCTION_SUCCESS);
+}
+
+static int	gen_both_stack(t_ps_info *info)
+{
+	info->a = gen_stack(info->num_elements, info->array);
+	if (!info->a)
+		return (free(info->array), ALLOCATE_FAILURE);
+	info->b = gen_stack(0, NULL);
+	if (!info->b)
+		return (free(info->array),free_stack(info->a), ALLOCATE_FAILURE);
+	free(info->array);
+	return (FUNCTION_SUCCESS);
+}
+
+static void	run_sort(t_ps_info *info)
+{
+	assign_index(info->a);
+	if (info->num_elements <= 3)
+		sort_under3(info->a, info->b);
+	else
+		radix_sort_stk(info->a, info->b);
+}
+
+static void	free_both_stack(t_ps_info *info)
+{
+	free_stack(info->a);
+	free_stack(info->b);
 }
 
 int	main(int ac, char **av)
@@ -46,14 +74,13 @@ int	main(int ac, char **av)
 	t_ps_info	info;
 
 	info.num_elements = ac - 1;
-	if (!parse_inputs(&info, av))
-		return (1);
-	assign_index(info.a);
-	if (num_elements <= 3)
-		sort_under3(info.a, info.b);
-	else
-		radix_sort_stk(info.a, info.b);
-	free_stack(info.a);
-	free_stack(info.b);
-	return (0);
+	printf("bf par_in\n");
+	if (parse_inputs(&info, av) != FUNCTION_SUCCESS)
+		return (MAIN_FAILURE);
+	printf("af par_in\n");
+	if (gen_both_stack(&info) != FUNCTION_SUCCESS)
+		return (MAIN_FAILURE);
+	run_sort(&info);
+	free_both_stack(&info);
+	return (MAIN_SUCCESS);
 }
